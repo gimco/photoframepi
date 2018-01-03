@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="titulo"><img src="img/titulo.png"/></div>
+    <div class="info">
+      <div id="uploading" style="display: none">
+        <p>Subiendo imagen ...</p>
+        <img src="img/spinner.gif"/>
+      </div>
+      <form id="image-form" ENCTYPE="multipart/form-data" method="post">
+        <p>Pulsa sobre el icono de abajo y selecciona una foto para subir.</p>
+        <p> 😁 🎉 🎁 🎂 🍰 🎊 😛 </p>
+        <p>¡En un minuto la podremos ver en la televisión!</p>
+        <div class="image-upload">
+          <label for="file"><img src="img/camara.png"/></label>
+          <input id="file" name="file" type="file" accept="image/*" onchange="uploadImage()" />
+        </div>
+      </form>
+    </div>
+    <script type="text/javascript">
+
+    function uploadImage() {
+      document.getElementById("uploading").style.display = 'block';
+      document.getElementById("image-form").style.display = 'none';
+      setTimeout(function () {
+        document.getElementById("image-form").submit(); 
+      }, 500);
+    }
+    </script>
+  </body>
+</html>
