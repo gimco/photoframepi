@@ -6,9 +6,8 @@ IMAGE_LIST=/tmp/photo-frame-pi.list
 
 rm $STOP_FILE
 
-# Iniciar servicio python en segundo plano
-cd $BASE_DIR/web
-../webserver.py &
+# Iniciar la descarga de imágenes de cloudinary
+cloudinary.py &
 
 cd $BASE_DIR
 while [ ! -f $STOP_FILE ] ; do

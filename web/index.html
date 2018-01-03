@@ -12,13 +12,14 @@
         <p>Subiendo imagen ...</p>
         <img src="img/spinner.gif"/>
       </div>
-      <form id="image-form" ENCTYPE="multipart/form-data" method="post">
+      <form id="image-form" ENCTYPE="multipart/form-data" method="post" action="https://api.cloudinary.com/v1_1/gimco/image/upload">
         <p>Pulsa sobre el icono de abajo y selecciona una foto para subir.</p>
         <p> 😁 🎉 🎁 🎂 🍰 🎊 😛 </p>
         <p>¡En un minuto la podremos ver en la televisión!</p>
         <div class="image-upload">
           <label for="file"><img src="img/camara.png"/></label>
           <input id="file" name="file" type="file" accept="image/*" onchange="uploadImage()" />
+          <input type="hidden" name="upload_preset" value="brunito" />
         </div>
       </form>
     </div>
